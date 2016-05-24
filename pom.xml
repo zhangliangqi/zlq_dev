@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-<<<<<<< HEAD
         <module>zlq_dev_web</module>
         <module>zlq_dev_common</module>
         <module>zlq_dev_thirdparty</module>
@@ -118,10 +117,4 @@
             </snapshots>
         </repository>
     </repositories>
-=======
-        <module>../zlq_dev_web</module>
-    </modules>
-
-
->>>>>>> 9f5e48ab27bb35ed8d69ff6915877fb9258906e3
 </project>
