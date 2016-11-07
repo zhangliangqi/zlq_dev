@@ -3,10 +3,8 @@ package cn.zlq.test.web;
 import cn.zlq.test.listener.OneLintener;
 import cn.zlq.test.listener.TwoLintener;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author zhangliangqi
