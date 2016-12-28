@@ -1,8 +1,11 @@
 package cn.zlq.test.web;
 
+import cn.zlq.utils.LocalCacheHandle;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author zhangliangqi
@@ -16,6 +19,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello(){
-        return "hello world";
+        return "hello world,"+ LocalCacheHandle.get("test1");
     }
 }

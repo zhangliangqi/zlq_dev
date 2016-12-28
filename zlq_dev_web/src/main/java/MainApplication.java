@@ -1,7 +1,7 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 /**
  * @author zhangliangqi
@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description
  * @date 2016-05-24
  */
+
 @EnableAutoConfiguration
+@SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class,args);

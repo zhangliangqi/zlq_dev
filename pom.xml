@@ -9,24 +9,25 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>zlq_dev_web</module>
         <module>zlq_dev_common</module>
-        <module>zlq_dev_thirdparty</module>
-        <module>zlq_dev_thirdparty_service</module>
         <module>zlq_dev_security</module>
         <module>zlq_dev_cache</module>
         <module>zql_dev_base</module>
+        <module>zlq_dev_thirdparty</module>
+        <module>zlq_dev_thirdparty_service</module>
+        <module>zlq_dev_web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.3.5.RELEASE</version>
     </parent>
-<dependencyManagement>
+    <dependencyManagement>
         <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.3.5.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -66,8 +67,18 @@
                 <artifactId>spring-data-rest-webmvc</artifactId>
                 <version>4.2.0.RELEASE</version>
             </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.7.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.4</version>
+            </dependency>
 
-        <dependency>
+            <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.2.0.RELEASE</version>
@@ -96,7 +107,11 @@
             <artifactId>spring-aop</artifactId>
             <version>4.2.0.RELEASE</version>
         </dependency>
-
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.7</version>
+            </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -107,13 +122,42 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.7</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.7.1.RELEASE</version>
+        </dependency>
+            <dependency>
+                <groupId>org.msgpack</groupId>
+                <artifactId>msgpack</artifactId>
+                <version>0.6.12</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.msgpack/msgpack-core -->
+            <dependency>
+                <groupId>org.msgpack</groupId>
+                <artifactId>msgpack-core</artifactId>
+                <version>0.7.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>20.0</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
     <repositories>
         <repository>
             <id>maven response</id>
             <name>maven response</name>
-            <url>http://mvnrepository.com/artifact/</url>
+            <url>http://maven.aliyun.com/nexus/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -122,4 +166,7 @@
             </snapshots>
         </repository>
     </repositories>
+    <build>
+        <defaultGoal>root</defaultGoal>
+    </build>
 </project>

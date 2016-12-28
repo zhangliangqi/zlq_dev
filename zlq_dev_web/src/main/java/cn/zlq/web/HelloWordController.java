@@ -1,3 +1,4 @@
+
 package cn.zlq.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description
  * @date 2016-05-24
  */
+
 @RestController
 public class HelloWordController {
 
@@ -20,3 +22,4 @@ public class HelloWordController {
         return "hello word11";
     }
 }
+

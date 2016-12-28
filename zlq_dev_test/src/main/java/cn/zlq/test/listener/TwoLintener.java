@@ -13,6 +13,6 @@ import org.springframework.context.ApplicationListener;
 public class TwoLintener implements ApplicationListener{
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        System.out.println("two lintener ,"+applicationEvent.getTimestamp());
+        System.out.println(" 我是监听器2 two lintener ,"+applicationEvent.getTimestamp());
     }
 }
