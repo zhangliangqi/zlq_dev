@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zlq.mapping.CiRemindMapper" >
+  <resultMap id="BaseResultMap" type="com.zlq.model.CiRemind" >
+    <id column="ID_" property="id" jdbcType="DECIMAL" />
+    <result column="REMIND_CONTEXT" property="remindContext" jdbcType="VARCHAR" />
+    <result column="REMIND_TIME" property="remindTime" jdbcType="DATE" />
+    <result column="REMIND_CONTRACTNO" property="remindContractno" jdbcType="VARCHAR" />
+    <result column="REMIND_SYSKEY" property="remindSyskey" jdbcType="VARCHAR" />
+    <result column="REMIND_COLLECTOR" property="remindCollector" jdbcType="VARCHAR" />
+    <result column="DISPOSE_TIME" property="disposeTime" jdbcType="DATE" />
+    <result column="DISPOSE_CREATOR" property="disposeCreator" jdbcType="VARCHAR" />
+    <result column="IS_DISPOSE" property="isDispose" jdbcType="CHAR" />
+    <result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+    <result column="CREATOR_TIME" property="creatorTime" jdbcType="DATE" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="DATE" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from CI_REMIND
+    where ID_ = #{id,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.zlq.model.CiRemind" >
+    insert into CI_REMIND (ID_, REMIND_CONTEXT, REMIND_TIME, 
+      REMIND_CONTRACTNO, REMIND_SYSKEY, REMIND_COLLECTOR, 
+      DISPOSE_TIME, DISPOSE_CREATOR, IS_DISPOSE, 
+      CREATOR, CREATOR_TIME, UPDATE_TIME
+      )
+    values (#{id,jdbcType=DECIMAL}, #{remindContext,jdbcType=VARCHAR}, #{remindTime,jdbcType=DATE}, 
+      #{remindContractno,jdbcType=VARCHAR}, #{remindSyskey,jdbcType=VARCHAR}, #{remindCollector,jdbcType=VARCHAR}, 
+      #{disposeTime,jdbcType=DATE}, #{disposeCreator,jdbcType=VARCHAR}, #{isDispose,jdbcType=CHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{creatorTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlq.model.CiRemind" >
+    update CI_REMIND
+    set REMIND_CONTEXT = #{remindContext,jdbcType=VARCHAR},
+      REMIND_TIME = #{remindTime,jdbcType=DATE},
+      REMIND_CONTRACTNO = #{remindContractno,jdbcType=VARCHAR},
+      REMIND_SYSKEY = #{remindSyskey,jdbcType=VARCHAR},
+      REMIND_COLLECTOR = #{remindCollector,jdbcType=VARCHAR},
+      DISPOSE_TIME = #{disposeTime,jdbcType=DATE},
+      DISPOSE_CREATOR = #{disposeCreator,jdbcType=VARCHAR},
+      IS_DISPOSE = #{isDispose,jdbcType=CHAR},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATOR_TIME = #{creatorTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where ID_ = #{id,jdbcType=DECIMAL}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select ID_, REMIND_CONTEXT, REMIND_TIME, REMIND_CONTRACTNO, REMIND_SYSKEY, REMIND_COLLECTOR, 
+    DISPOSE_TIME, DISPOSE_CREATOR, IS_DISPOSE, CREATOR, CREATOR_TIME, UPDATE_TIME
+    from CI_REMIND
+    where ID_ = #{id,jdbcType=DECIMAL}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select ID_, REMIND_CONTEXT, REMIND_TIME, REMIND_CONTRACTNO, REMIND_SYSKEY, REMIND_COLLECTOR, 
+    DISPOSE_TIME, DISPOSE_CREATOR, IS_DISPOSE, CREATOR, CREATOR_TIME, UPDATE_TIME
+    from CI_REMIND
+  </select>
+</mapper>
